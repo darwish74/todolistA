@@ -1,0 +1,41 @@
+﻿@model List<todolistA.Models.Tasky>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link href="~/css/CreatePerson.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome, @ViewBag.personName</h1>
+        <p><strong>Here is your to-do list:</strong></p>
+        <a href="http://localhost:5187/TaskManager/Create">Create New</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Deadline</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.DeadLine</td>
+                <td class="action-links">
+                    <a href="/TaskManager/Edit/@item.Id">Edit</a>
+                    <a href="/TaskManager/Delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

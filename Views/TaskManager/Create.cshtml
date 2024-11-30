@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Item</title>
+    <link href="~/css/CreateTask.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="contain">
+        <h1>CreateNew</h1>
+        <h3>ListItem</h3>
+        <form action="/TaskManager/Create" method="post">
+            <label for="name">Title</label>
+            <input type="text" id="name" name="title" placeholder="Task title" required>
+
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" placeholder="Task description" required>
+
+            <label for="deadline">DeadLine</label>
+            <input type="date" id="deadline" name="deadline" required>
+
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</body>
+</html>
